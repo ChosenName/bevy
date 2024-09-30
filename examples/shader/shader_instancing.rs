@@ -235,6 +235,8 @@ impl SpecializedMeshPipeline for CustomPipeline {
 type DrawCustom = (
     SetItemPipeline,
     SetMeshViewBindGroup<0>,
+    // Since all transform data is sent through the instance buffer this bind group is unused, 
+    // although it is required by the MeshPipeline.
     SetMeshBindGroup<1>,
     DrawMeshInstanced,
 );
